@@ -1,5 +1,6 @@
 body {
   margin: 0 auto;
+  background-color: rgba(128, 128, 128, 0.39);
 }
 
 .search-form {
@@ -18,7 +19,7 @@ body {
   border-radius: 5px 0 0 5px;
   outline: none;
   background: #f9f0da;
-  color: #9e9c9c;
+  color: #4e4e4e;
 }
 .search-form button {
   width: 50px;
@@ -34,17 +35,72 @@ body {
 }
 
 .gallery {
+  padding-top: 10px;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.photo-card {
+  border: 1px solid #a3d0c3;
+  border-radius: 0 0 5px 5px;
+  background-color: #f9f0da;
+}
+.gallery a {
+  display: flex;
+  overflow: hidden;
+  width: 400px;
+  height: 330px;
+}
+
+.gallery img {
+  display: block;
+  border: 1px solid #a3d0c3;
+}
+
+.info {
+  margin: 5px;
+}
+
+.info b {
+  color: #4e4e4e;
+}
+
+.info-item span {
+  font-size: 25px;
 }
 
 .load-more {
-  position: absolute;
-  bottom: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100px;
   height: 42px;
   border: none;
   background: #a3d0c3;
   border-radius: 5px;
   cursor: pointer;
+  color: #4e4e4e;
+}
+
+.bntDiv {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
