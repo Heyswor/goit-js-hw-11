@@ -1,6 +1,7 @@
 body {
   margin: 0 auto;
   background-color: rgba(128, 128, 128, 0.39);
+  padding-bottom: 10px;
 }
 
 .search-form {
@@ -36,6 +37,7 @@ body {
 
 .gallery {
   padding-top: 10px;
+  padding-bottom: 10px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -72,9 +74,8 @@ body {
 }
 
 .load-more {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
+  margin: 0 auto;
   width: 100px;
   height: 42px;
   border: none;
@@ -84,13 +85,6 @@ body {
   color: #4e4e4e;
 }
 
-.bntDiv {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -98,7 +92,7 @@ body {
   margin: -1px;
   border: 0;
   padding: 0;
-  
+
   white-space: nowrap;
   clip-path: inset(100%);
   clip: rect(0 0 0 0);

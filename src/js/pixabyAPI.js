@@ -1,21 +1,25 @@
+import axios from 'axios';
+axios.defaults.baseURL = 'https://pixabay.com/api';
+
 export class PixabyAPI {
   #page = 1;
   #query = '';
   #totalPages = 0;
   #perPage = 40;
+  #params = {
+    params: {
+      image_type: 'photo',
+      orientation: 'horizontal',
+      safesearch: 'true',
+    },
+  };
 
-  getPhotos() {
-    const url = `https://pixabay.com/api/?key=30513394-8e383ed067439270a89ebf2b5&q=${
+  async getPhotos() {
+    const urlAXIOS = `/?key=30513394-8e383ed067439270a89ebf2b5&q=${
       this.#query
-    }&image_type=photo&orientation=horizontal&safesearch=true&per_page=${
-      this.#perPage
-    }&page=${this.#page}`;
-    return fetch(url).then(response => {
-      if (!response.ok) {
-        throw new Error(response.status);
-      }
-      return response.json();
-    });
+    }&per_page=${this.#perPage}&page=${this.#page}`;
+    const { data } = await axios.get(urlAXIOS, this.#params);
+    return data;
   }
   set query(newQuery) {
     this.#query = newQuery;
@@ -41,3 +45,4 @@ export class PixabyAPI {
     return this.#page < this.#totalPages;
   }
 }
+
